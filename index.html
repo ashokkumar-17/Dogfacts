@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dog Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #fff;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #4a4a4a;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Dog Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const dogFacts = [
+            {
+                fact: "Domestication",
+                description: "Dogs were domesticated from wolves around 20,000 to 40,000 years ago, making them one of the first domesticated animals."
+            },
+            {
+                fact: "Sense of Smell",
+                description: "A dog's sense of smell is estimated to be between 10,000 to 100,000 times more sensitive than that of humans, allowing them to detect scents from great distances."
+            },
+            {
+                fact: "Breeds",
+                description: "There are over 340 different dog breeds recognized worldwide, each with unique characteristics and traits."
+            },
+            {
+                fact: "Communication",
+                description: "Dogs communicate through a combination of vocalizations, body language, and facial expressions. They can understand human emotions and respond accordingly."
+            },
+            {
+                fact: "Lifespan",
+                description: "The average lifespan of a dog varies by breed, but most dogs live between 10 to 15 years. Smaller breeds tend to live longer than larger breeds."
+            },
+            {
+                fact: "Intelligence",
+                description: "Dogs are known for their intelligence and can learn a variety of commands and tricks. Some breeds, like Border Collies, are considered among the smartest."
+            },
+            {
+                fact: "Pack Animals",
+                description: "Dogs are naturally pack animals, which means they thrive on social interaction and often form strong bonds with their human families."
+            },
+            {
+                fact: "Hearing Ability",
+                description: "Dogs have an exceptional sense of hearing and can hear sounds at frequencies as high as 65,000 Hz, while humans can only hear up to about 20,000 Hz."
+            },
+            {
+                fact: "Tail Wagging",
+                description: "A dog's tail wagging can indicate different emotions. For example, a wagging tail held high often signifies happiness, while a low wagging tail may indicate submission or uncertainty."
+            },
+            {
+                fact: "Service Dogs",
+                description: "Dogs are often trained to assist humans in various capacities, including as service dogs for individuals with disabilities, therapy dogs for emotional support, and search and rescue dogs."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * dogFacts.length);
+            const selectedFact = dogFacts[randomIndex];
+            document.getElementById('fact').innerText = `${selectedFact.fact}: ${selectedFact.description}`;
+        });
+    </script>
+</body>
+</html>
